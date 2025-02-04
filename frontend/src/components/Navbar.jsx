@@ -30,16 +30,16 @@ const Navbar = () => {
                 <ul className='md:flex hidden md:flex-row flex-col gap-7 mt-10 md:mt-0'>
                         <li><a href="/" className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>Home</a></li>
                         <li><a href="/about"  className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>About</a></li>
-                        <li><a href="" className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>Vegetables</a></li>
+                        <li><a href="" className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>Portofolio</a></li>
                         <li><a href=""  className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>Contact</a></li>      
                  </ul>     
 
                 <nav className={`z-20 lg:hidden absolute lg:static duration-500 md:w-auto md:bg-transparand shadow-lg md:shadow-none top-0 left-0 w-full bg-slate-100 md:bg-transparent px-4 py-5 md:py-0 ${open ? 'top-0 pb-10' : 'top-[-1000%]'}`}>
-                   <p className='md:hidden text-slate-900 font-semibold text-2xl'>Relifgion</p>            
+                    <img src={blacklogo} className="w-[150px] duration-500" alt="" />
                     <ul className='flex sm:hidden md:flex-row flex-col gap-7 mt-10 md:mt-0'>
                         <li><a href="/" className='text-slate-900 font-inter'>Home</a></li>
                         <li><a href="/about" className=' text-slate-900 font-inter'>About</a></li>
-                        <li><a href="" className='text-slate-900 font-inter'>Vegetables</a></li>
+                        <li><a href="" className='text-slate-900 font-inter'>Portofolio</a></li>
                         <li><a href="" className='text-slate-900 font-inter'>Contact</a></li>
                         
                     </ul>     
@@ -60,8 +60,11 @@ const Navbar = () => {
                      </div>
                 </div>
 
-                <div onClick={()=>setOpen(!open)} className={`z-20 ${scrolled ? 'text-customDark':'text-white'} text-3xl pt-3 md:hidden`}>
-                  <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
+            <div 
+                onClick={() => setOpen(!open)} 
+                className={`z-20 text-3xl pt-3 md:hidden ${open ? 'text-customDark' : (scrolled ? 'text-customDark' : 'text-white')}`}
+                >
+                <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
                 </div>
             </div>
             
